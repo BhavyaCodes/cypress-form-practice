@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { ButtonPrimary } from 'components/common/buttons/ButtonPrimary';
 import { TextInput } from 'components/common/TextInput';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -44,18 +44,6 @@ const First: React.FC<FirstProps> = ({ handleSubmitFirst }) => {
 
   return (
     <Box component="form" onSubmit={handleSubmit(onSubmit)}>
-      <Typography
-        component="h1"
-        fontWeight={700}
-        fontSize={36}
-        align="center"
-        mb={1.5}
-      >
-        Welcome! First things first...
-      </Typography>
-      <Typography fontSize={20} color="#727272" align="center" mb={4}>
-        You can always change them later
-      </Typography>
       <TextInput
         placeholder="Steve Jobs"
         label="First Name"
