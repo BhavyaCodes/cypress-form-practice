@@ -18,7 +18,7 @@ const percentWidths: Record<Steps, string> = {
 
 const Stepper: FC<StepperProps> = ({ step }) => {
   return (
-    <Box position="relative">
+    <Box position="relative" mb={10}>
       <Box
         display="flex"
         alignItems="center"
