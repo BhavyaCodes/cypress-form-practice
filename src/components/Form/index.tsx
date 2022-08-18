@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import { Container } from '@mui/system';
 import { useState } from 'react';
 import { First } from './First';
 import { Second } from './Second';
@@ -52,9 +53,11 @@ const Form = () => {
         title={titles[step]?.[0]}
         subtitle={titles[step]?.[1]}
       />
-      {step == 1 && <First handleSubmitFirst={handleSubmitFirst} />}
-      {step == 2 && <Second handleSubmitSecond={handleSubmitSecond} />}
-      {step == 3 && <Third handleSubmitThird={handleSubmitThird} />}
+      <Container maxWidth="sm">
+        {step == 1 && <First handleSubmitFirst={handleSubmitFirst} />}
+        {step == 2 && <Second handleSubmitSecond={handleSubmitSecond} />}
+        {step == 3 && <Third handleSubmitThird={handleSubmitThird} />}
+      </Container>
     </Box>
   );
 };

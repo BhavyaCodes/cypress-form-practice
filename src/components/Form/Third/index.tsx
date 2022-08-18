@@ -42,7 +42,10 @@ const Third: FC<ThirdProps> = ({ handleSubmitThird }) => {
         sx={{ width: '100%', py: 2, mt: 5 }}
         type="button"
         disabled={!selectedType}
-        onClick={() => handleSubmitThird(selectedType)}
+        onClick={() => {
+          if (!selectedType) return;
+          handleSubmitThird(selectedType);
+        }}
       >
         Create Workspace
       </ButtonPrimary>
