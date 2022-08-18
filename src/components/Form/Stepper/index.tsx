@@ -1,19 +1,18 @@
-import { Box } from "@mui/material";
-import React from "react";
-import { FC } from "react";
-import Step from "./Step";
-
-type Steps = 1 | 2 | 3 | 4;
+import { Box } from '@mui/material';
+import React from 'react';
+import { FC } from 'react';
+import { Steps } from '..';
+import Step from './Step';
 
 interface StepperProps {
   step: Steps;
 }
 
 const percentWidths: Record<Steps, string> = {
-  "1": "16%",
-  "2": "50%",
-  "3": "84%",
-  "4": "100%",
+  '1': '16%',
+  '2': '50%',
+  '3': '84%',
+  '4': '100%',
 };
 
 const Stepper: FC<StepperProps> = ({ step }) => {
@@ -37,7 +36,7 @@ const Stepper: FC<StepperProps> = ({ step }) => {
         width="calc(100% - 64px - 50px)"
         sx={{
           bgcolor: (theme) => theme.palette.grey[300],
-          transform: "translate(-50% ,-50%)",
+          transform: 'translate(-50% ,-50%)',
         }}
         position="absolute"
         left="50%"

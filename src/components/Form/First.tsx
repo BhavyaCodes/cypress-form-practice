@@ -1,45 +1,45 @@
-import { Box, Typography } from "@mui/material";
-import { ButtonPrimary } from "components/common/buttons/ButtonPrimary";
-import { TextInput } from "components/common/TextInput";
-import { SubmitHandler, useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { Box, Typography } from '@mui/material';
+import { ButtonPrimary } from 'components/common/buttons/ButtonPrimary';
+import { TextInput } from 'components/common/TextInput';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 interface FirstProps {
-  // : string;
+  handleSubmitFirst: (firstName: string, displayName: string) => void;
 }
 
 type FormValues = {
-  first_name: string;
-  display_name: string;
+  firstName: string;
+  displayName: string;
 };
 
 const schema: yup.SchemaOf<FormValues> = yup.object().shape({
-  first_name: yup
+  firstName: yup
     .string()
     .trim()
-    .required("First name is required")
-    .matches(/^([A-Za-z]){0}[A-Za-z.]+\s*$/i, "Invalid input"),
-  display_name: yup
+    .required('First name is required')
+    .matches(/^([A-Za-z]){0}[A-Za-z.]+\s*$/i, 'Invalid input'),
+  displayName: yup
     .string()
     .trim()
-    .required("Display name is required")
+    .required('Display name is required')
     .matches(/^(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/i, {
-      message: "Invalid username",
+      message: 'Invalid username',
     })
-    .min(3, "Minimum 3 characters required")
-    .max(20, "Maximum 20 characters allowed"),
+    .min(3, 'Minimum 3 characters required')
+    .max(20, 'Maximum 20 characters allowed'),
 });
 
-const First: React.FC<FirstProps> = ({}) => {
+const First: React.FC<FirstProps> = ({ handleSubmitFirst }) => {
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm<FormValues>({ resolver: yupResolver(schema), mode: "onTouched" });
+  } = useForm<FormValues>({ resolver: yupResolver(schema), mode: 'onTouched' });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    handleSubmitFirst(data.firstName, data.displayName);
   };
 
   return (
@@ -60,17 +60,17 @@ const First: React.FC<FirstProps> = ({}) => {
         placeholder="Steve Jobs"
         label="First Name"
         sx={{ mb: 2 }}
-        register={register("first_name")}
-        errorMessage={errors.first_name?.message}
+        register={register('firstName')}
+        errorMessage={errors.firstName?.message}
       />
       <TextInput
         placeholder="Steve"
         label="Display Name"
         sx={{ mb: 2 }}
-        register={register("display_name")}
-        errorMessage={errors.display_name?.message}
+        register={register('displayName')}
+        errorMessage={errors.displayName?.message}
       />
-      <ButtonPrimary sx={{ width: "100%", py: 2 }} type="submit">
+      <ButtonPrimary sx={{ width: '100%', py: 2 }} type="submit">
         Create Workspace
       </ButtonPrimary>
     </Box>
