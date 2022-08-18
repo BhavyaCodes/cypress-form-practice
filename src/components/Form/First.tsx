@@ -31,7 +31,7 @@ const schema: yup.SchemaOf<FormValues> = yup.object().shape({
     .max(20, 'Maximum 20 characters allowed'),
 });
 
-const First: React.FC<FirstProps> = ({ handleSubmitFirst }) => {
+export const First: React.FC<FirstProps> = ({ handleSubmitFirst }) => {
   const {
     register,
     formState: { errors },
@@ -64,5 +64,3 @@ const First: React.FC<FirstProps> = ({ handleSubmitFirst }) => {
     </Box>
   );
 };
-
-export default First;

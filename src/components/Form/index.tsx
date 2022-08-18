@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
 import { useState } from 'react';
-import First from './First';
+import { First } from './First';
+import { Second } from './Second';
 import Stepper from './Stepper';
 
 export type Steps = 1 | 2 | 3 | 4;
@@ -9,11 +10,19 @@ const Form = () => {
   const [step, setStep] = useState<Steps>(1);
   const [firstName, setFirstName] = useState<null | string>(null);
   const [displayName, setDisplayName] = useState<null | string>(null);
+  const [workspaceName, setWorkspaceName] = useState<null | string>(null);
+  const [workspaceUrl, setWorkspaceUrl] = useState<null | string>(null);
 
   const handleSubmitFirst = (firstName: string, displayName: string) => {
     setFirstName(firstName);
     setDisplayName(displayName);
     setStep(2);
+  };
+
+  const handleSubmitSecond = (workspaceName: string, workspaceUrl: string) => {
+    setWorkspaceName(workspaceName);
+    setWorkspaceUrl(workspaceUrl);
+    setStep(3);
   };
 
   const titles: Record<Steps, [string, string] | null> = {
@@ -33,7 +42,8 @@ const Form = () => {
         title={titles[step]?.[0]}
         subtitle={titles[step]?.[1]}
       />
-      <First handleSubmitFirst={handleSubmitFirst} />
+      {step == 1 && <First handleSubmitFirst={handleSubmitFirst} />}
+      {step == 2 && <Second handleSubmitSecond={handleSubmitSecond} />}
     </Box>
   );
 };
