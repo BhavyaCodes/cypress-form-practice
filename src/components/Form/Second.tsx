@@ -24,7 +24,7 @@ const schema: yup.SchemaOf<FormValues> = yup.object().shape({
     .string()
     .trim()
     .required('Workspace Url is required')
-    .matches(/^[a-zA-Z0-9._]*$/i, {
+    .matches(/^[a-zA-Z0-9._-]*$/i, {
       message: 'Invalid url',
     })
     .min(5, 'Minimum 5 characters required')

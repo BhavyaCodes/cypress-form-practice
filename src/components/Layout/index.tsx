@@ -30,7 +30,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
           </Typography>
         </Box>
       </StyledContainer>
-      <Box>{children}</Box>
+      <Box pb={10}>{children}</Box>
     </>
   );
 };

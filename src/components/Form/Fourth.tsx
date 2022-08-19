@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import { ButtonPrimary } from 'components/common/buttons/ButtonPrimary';
 import { FC } from 'react';
 
-const Fourth: FC<{ firstName: string }> = ({ firstName }) => {
+const Fourth: FC<{ displayName: string }> = ({ displayName }) => {
   return (
     <Box display="flex" flexDirection="column" alignItems="center" pt={4}>
       <Box
@@ -27,7 +27,7 @@ const Fourth: FC<{ firstName: string }> = ({ firstName }) => {
         align="center"
         mb={1.5}
       >
-        {`Congratulations, ${firstName}`}
+        {`Congratulations, ${displayName}`}
       </Typography>
       <Typography fontSize={18} color="#727272" align="center" mb={4}>
         You have completed onboarding, you can start using the Eden!

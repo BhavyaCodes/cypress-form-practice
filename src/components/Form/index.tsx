@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { Container } from '@mui/system';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { First } from './First';
 import Fourth from './Fourth';
 import { Second } from './Second';
@@ -47,6 +47,17 @@ const Form = () => {
     4: null,
   };
 
+  useEffect(() => {
+    if (step == 4) {
+      console.log(firstName);
+      console.log(displayName);
+      console.log(workspaceName);
+      console.log(workspaceUrl);
+      console.log(teamType);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step]);
+
   return (
     <Box>
       <Stepper
@@ -58,7 +69,7 @@ const Form = () => {
         {step == 1 && <First handleSubmitFirst={handleSubmitFirst} />}
         {step == 2 && <Second handleSubmitSecond={handleSubmitSecond} />}
         {step == 3 && <Third handleSubmitThird={handleSubmitThird} />}
-        {step == 4 && <Fourth firstName={firstName!} />}
+        {step == 4 && <Fourth displayName={displayName!} />}
       </Container>
     </Box>
   );
