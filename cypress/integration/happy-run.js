@@ -2,7 +2,7 @@
 
 describe('Test full form flow with happy run', () => {
   it('Should be able to submit a successful submission', () => {
-    cy.visit('http://localhost:3000');
+    cy.visit(Cypress.env()['WEBSITE_URL']);
 
     //first screen
     cy.get('input[name="firstName"]').type('Bhavya Tomar');

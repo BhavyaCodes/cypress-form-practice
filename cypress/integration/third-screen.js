@@ -2,7 +2,7 @@
 
 describe('Test third screen', () => {
   it('Button should be disabled if no option is selected', () => {
-    cy.visit('http://localhost:3000');
+    cy.visit(Cypress.env()['WEBSITE_URL']);
 
     //first screen
     cy.get('input[name="firstName"]').type('Bhavya Tomar');

@@ -2,7 +2,7 @@
 
 describe('Check form validation on first screen', () => {
   it('Should not accept @Bhavya Tomar as valid first name input', () => {
-    cy.visit('http://localhost:3000');
+    cy.visit(Cypress.env()['WEBSITE_URL']);
 
     cy.get('input[name="firstName"]').type('@Bhavya Tomar');
     cy.get('input[name="displayName"]').type('Bhavya');
@@ -12,7 +12,7 @@ describe('Check form validation on first screen', () => {
   });
 
   it('Should not accept Bha  vya as valid display name input', () => {
-    cy.visit('http://localhost:3000');
+    cy.visit(Cypress.env()['WEBSITE_URL']);
 
     cy.get('input[name="firstName"]').type('Bhavya Tomar');
     cy.get('input[name="displayName"]').type('Bha  vya');
