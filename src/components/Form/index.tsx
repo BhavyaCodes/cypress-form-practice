@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 import { Container } from '@mui/system';
 import { useState } from 'react';
 import { First } from './First';
+import Fourth from './Fourth';
 import { Second } from './Second';
 import Stepper from './Stepper';
 import Third from './Third';
@@ -57,6 +58,7 @@ const Form = () => {
         {step == 1 && <First handleSubmitFirst={handleSubmitFirst} />}
         {step == 2 && <Second handleSubmitSecond={handleSubmitSecond} />}
         {step == 3 && <Third handleSubmitThird={handleSubmitThird} />}
+        {step == 4 && <Fourth firstName={firstName!} />}
       </Container>
     </Box>
   );

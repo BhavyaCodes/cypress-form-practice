@@ -19,7 +19,7 @@ const schema: yup.SchemaOf<FormValues> = yup.object().shape({
     .string()
     .trim()
     .required('First name is required')
-    .matches(/^([A-Za-z]){0}[A-Za-z.]+\s*$/i, 'Invalid input'),
+    .matches(/^[a-zA-Z. ]+$/, 'Invalid input'),
   displayName: yup
     .string()
     .trim()

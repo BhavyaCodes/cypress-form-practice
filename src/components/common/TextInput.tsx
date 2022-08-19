@@ -1,7 +1,7 @@
-import { Box, SxProps, Typography } from "@mui/material";
-import { styled } from "@mui/system";
-import { FC, InputHTMLAttributes, ReactNode } from "react";
-import { UseFormRegisterReturn } from "react-hook-form";
+import { Box, SxProps, Typography } from '@mui/material';
+import { styled } from '@mui/system';
+import { FC, InputHTMLAttributes, ReactNode } from 'react';
+import { UseFormRegisterReturn } from 'react-hook-form';
 
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   sx?: SxProps<any>;
@@ -13,26 +13,27 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const StyledBox = styled(Box)({
-  border: "1px solid #cecece",
-  borderRadius: "5px",
-  backgroundColor: "#fff",
-  overflow: "hidden",
-  "& input": {
-    padding: "10px 12px",
-    font: "inherit",
-    border: "none",
-    outline: "none",
-    "&:focus": {
-      outline: "none",
+  border: '1px solid #cecece',
+  borderRadius: '5px',
+  backgroundColor: '#fff',
+  overflow: 'hidden',
+  '& input': {
+    padding: '10px 12px',
+    font: 'inherit',
+    border: 'none',
+    outline: 'none',
+    '&:focus': {
+      outline: 'none',
     },
-    width: "100%",
-    "&::placeholder": {
-      fontSize: "14px",
-      color: "#7A869A",
+    fontSize: '14px',
+    width: '100%',
+    '&::placeholder': {
+      fontSize: '14px',
+      color: '#7A869A',
     },
     flexGrow: 1,
   },
-  display: "flex",
+  display: 'flex',
 });
 
 export const TextInput: FC<TextInputProps> = ({
