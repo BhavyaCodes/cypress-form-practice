@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Grid, useMediaQuery, useTheme } from '@mui/material';
 import { FC, useState } from 'react';
 import Card from './Card';
 import single from 'assets/single.png';
@@ -12,9 +12,12 @@ interface ThirdProps {
 
 const Third: FC<ThirdProps> = ({ handleSubmitThird }) => {
   const [selectedType, setSelectedType] = useState<TeamType | null>(null);
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <>
-      <Grid container spacing={8}>
+      <Grid container spacing={matches ? 6 : 8}>
         <Grid item xs={6}>
           <Card
             icon={single}

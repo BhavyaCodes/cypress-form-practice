@@ -16,7 +16,13 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
           display="flex"
           justifyContent="center"
           alignItems="center"
-          marginBottom="100px"
+          // marginBottom="100px"
+          sx={{
+            mb: {
+              xs: '50px',
+              md: '100px',
+            },
+          }}
         >
           <Image src={logo} alt="Eden logo" />
           <Typography align="center" fontWeight={700} fontSize={30} ml={1}>

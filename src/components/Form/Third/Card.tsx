@@ -30,9 +30,14 @@ const Card: FC<CardProps> = ({
           ? (theme) => `1px solid ${theme.palette.primary.main}`
           : '1px solid #dddddd',
         cursor: 'pointer',
+        p: {
+          xs: 2,
+          md: 4,
+        },
       }}
       borderRadius="5px"
-      p={4}
+      // p={4}
+
       display="flex"
       flexDirection="column"
       // justifyContent="flex-start"

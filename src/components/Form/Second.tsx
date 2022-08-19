@@ -19,7 +19,7 @@ const schema: yup.SchemaOf<FormValues> = yup.object().shape({
     .string()
     .trim()
     .required('Workspace Name is required')
-    .matches(/^[a-zA-Z ]+$/, 'Invalid input'),
+    .matches(/^[a-zA-Z0-9 ]+$/, 'Invalid input'),
   workspaceUrl: yup
     .string()
     .trim()
