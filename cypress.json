@@ -1,5 +1,5 @@
 {
 	"env": {
-    "WEBSITE_URL": "http://localhost:3000"
+    "WEBSITE_URL": "https://cypress-form-practice.vercel.app"
 	}
 }
